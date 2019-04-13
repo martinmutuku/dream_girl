@@ -35,30 +35,6 @@ class _HomeState extends State<Home> {
               child: new Text(problems[index]),
             ),
           ),
-          // onTap: () {
-          //   showDialog(
-          //       barrierDismissible: false,
-          //       context: context,
-          //       child: new CupertinoAlertDialog(
-          //         title: new Column(
-          //           children: <Widget>[
-          //             new Text("GridView"),
-          //             new Icon(
-          //               Icons.favorite,
-          //               color: Colors.red,
-          //             ),
-          //           ],
-          //         ),
-          //         content: new Text( spacecrafts[index]),
-          //         actions: <Widget>[
-          //           new FlatButton(
-          //               onPressed: () {
-          //                 Navigator.of(context).pop();
-          //               },
-          //               child: new Text("OK"))
-          //         ],
-          //       ));
-          // },
         );
       },
     );
