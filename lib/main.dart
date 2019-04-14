@@ -1,72 +1,162 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
-void main() => runApp(MyApp());
+main() => runApp(
+  Directionality(
+    textDirection: TextDirection.ltr,
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+    child: Center(
+        child: MyStatelessWidget()
+
+    ),
+  ),
+);
+
+class MyStatelessWidget extends StatelessWidget {
+
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Dream Girls',
-      theme: ThemeData(
+  Widget build(BuildContext context) { // I'll describe [context] later
+    return new Container()
+    );
+    //return _buildList();
+,
+  }
 
-        primarySwatch: Colors.pink,
-      ),
-      home: MyHomePage(title: 'DREAM GIRLS'),
+}
+class Fgm extends StatelessWidget
+{
+  @override
+  Widget build (BuildContext context)
+  {
+    return Container(
+      margin: EdgeInsets.only(top: 30.0),
+      width: 250.0,
+      height: 50.0,
+      child: RaisedButton(
+          color: Colors.pink,
+          child: Text("Female Genital Mutilation"),
+          elevation: 6.0,
+          onPressed: ()
+          {
+            //action
+            //_buildList();
+            Sexuality();
+          }),
+
     );
   }
+
+
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
+class Sexuality extends StatelessWidget
+{
   @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-
-    return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+  Widget build (BuildContext context)
+  {
+    return Container(
+      margin: EdgeInsets.only(top: 30.0),
+      width: 250.0,
+      height: 50.0,
+      child: RaisedButton(
+          color: Colors.pink,
+          child: Text("Sexuality"),
+          elevation: 6.0,
+          onPressed: ()
+          {
+            //action
+            _buildList();
+          }),
     );
   }
+
+
+}
+
+class Puberty extends StatelessWidget
+{
+  @override
+  Widget build (BuildContext context)
+  {
+    return Container(
+      margin: EdgeInsets.only(top: 30.0),
+      width: 250.0,
+      height: 50.0,
+      child: RaisedButton(
+          color: Colors.pink,
+          child: Text("Puberty Matters"),
+          elevation: 6.0,
+          onPressed: ()
+          {
+            //action
+            _buildList();
+          }),
+    );
+  }
+
+
+}
+
+class Faqs extends StatelessWidget
+{
+  @override
+  Widget build (BuildContext context)
+  {
+    return Container(
+      margin: EdgeInsets.only(top: 30.0),
+      width: 250.0,
+      height: 50.0,
+      child: RaisedButton(
+          color: Colors.pink,
+          child: Text("Girls Questions"),
+          elevation: 6.0,
+          onPressed: ()
+          {
+            //action
+            _buildList();
+          }),
+    );
+  }
+
+
+}
+
+Widget _buildList() => ListView(
+  children: [
+    _tile('CineArts at the Empire', '85 W Portal Ave', Icons.theaters),
+    _tile('The Castro Theater', '429 Castro St', Icons.theaters),
+    _tile('Alamo Drafthouse Cinema', '2550 Mission St', Icons.theaters),
+    _tile('Roxie Theater', '3117 16th St', Icons.theaters),
+    _tile('United Artists Stonestown Twin', '501 Buckingham Way',
+        Icons.theaters),
+    _tile('AMC Metreon 16', '135 4th St #3000', Icons.theaters),
+    Divider(),
+    _tile('Kescaped_code#39;s Kitchen', '757 Monterey Blvd', Icons.restaurant),
+    _tile('Emmyescaped_code#39;s Restaurant', '1923 Ocean Ave', Icons.restaurant),
+    _tile(
+        'Chaiya Thai Restaurant', '272 Claremont Blvd', Icons.restaurant),
+    _tile('La Ciccia', '291 30th St', Icons.restaurant),
+  ],
+);
+
+ListTile _tile(String title, String subtitle, IconData icon) => ListTile(
+  title: Text(title,
+      style: TextStyle(
+        fontWeight: FontWeight.w500,
+        fontSize: 20,
+      )),
+  subtitle: Text(subtitle),
+  leading: Icon(
+    icon,
+    color: Colors.blue[500],
+  ),
+);
+
+
+Widget get submitRatingButton {
+  return RaisedButton(
+    onPressed: () => print('pressed!'),
+    child: Text('Submit'),
+    color: Colors.indigoAccent,
+  );
 }
